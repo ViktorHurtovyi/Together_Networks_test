@@ -4,6 +4,7 @@ namespace App\Command;
 
 use App\Worker\Designer;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -25,6 +26,5 @@ class CreateDesignerCommand extends Command
         $designer->communication()? $output->writeln('- communication with manager'):null;
         $designer->draw()? $output->writeln('- draw'):null;
         $designer->setTask()? $output->writeln('- set tasks'):null;
-
     }
 }
