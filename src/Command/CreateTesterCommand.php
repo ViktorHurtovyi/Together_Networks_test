@@ -20,11 +20,10 @@ class CreateTesterCommand extends Command
     {
         $tester = new Tester();
 
-        $tester->writeCode()? $output->writeln('- code write'):null;
-        $tester->testCode()? $output->writeln('- code testing'):null;
-        $tester->communication()? $output->writeln('- communication with manager'):null;
-        $tester->draw()? $output->writeln('- draw'):null;
-        $tester->setTask()? $output->writeln('- set tasks'):null;
-
+        if($tester->writeCode()) $output->writeln('- code write');
+        if($tester->testCode()) $output->writeln('- code testing');
+        if($tester->communication()) $output->writeln('- communication with manager');
+        if($tester->draw()) $output->writeln('- draw');
+        if($tester->setTask()) $output->writeln('- set tasks');
     }
 }

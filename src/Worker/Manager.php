@@ -30,28 +30,8 @@ class Manager implements Worker
     {
         return true;
     }
-
-    function can($do): string
+    public function __call($name, $arguments)
     {
-        switch ($do) {
-            case 'writeCode':
-                return 'false';
-                break;
-            case 'testCode':
-                return 'false';
-                break;
-            case 'communication':
-                return 'false';
-                break;
-            case 'draw':
-                return 'false';
-                break;
-            case 'setTask':
-                return 'true';
-                break;
-            default:
-                return 'неверный формат';
-                break;
-        }
+        return false;
     }
 }

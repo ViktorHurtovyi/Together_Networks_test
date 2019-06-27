@@ -10,5 +10,4 @@ interface Worker
     function communication();
     function draw();
     function setTask();
-    function can($param);
 }

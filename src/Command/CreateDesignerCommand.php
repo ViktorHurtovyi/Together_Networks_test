@@ -21,10 +21,10 @@ class CreateDesignerCommand extends Command
     {
         $designer = new Designer();
 
-        $designer->writeCode()? $output->writeln('- code write'):null;
-        $designer->testCode()? $output->writeln('- code testing'):null;
-        $designer->communication()? $output->writeln('- communication with manager'):null;
-        $designer->draw()? $output->writeln('- draw'):null;
-        $designer->setTask()? $output->writeln('- set tasks'):null;
+        if($designer->writeCode()) $output->writeln('- code write');
+        if($designer->testCode()) $output->writeln('- code testing');
+        if($designer->communication()) $output->writeln('- communication with manager');
+        if($designer->draw()) $output->writeln('- draw');
+        if($designer->setTask()) $output->writeln('- set tasks');
     }
 }

@@ -20,11 +20,11 @@ class CreateManagerCommand extends Command
     {
         $manager = new Manager();
 
-        $manager->writeCode()? $output->writeln('- code write'):null;
-        $manager->testCode()? $output->writeln('- code testing'):null;
-        $manager->communication()? $output->writeln('- communication with manager'):null;
-        $manager->draw()? $output->writeln('- draw'):null;
-        $manager->setTask()? $output->writeln('- set tasks'):null;
+        if($manager->writeCode()==true) $output->writeln('- code write');
+        if($manager->testCode()) $output->writeln('- code testing');
+        if($manager->communication()) $output->writeln('- communication with manager');
+        if($manager->draw()) $output->writeln('- draw');
+        if($manager->setTask()) $output->writeln('- set tasks');
 
     }
 }

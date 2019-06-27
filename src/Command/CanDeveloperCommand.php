@@ -20,6 +20,7 @@ class CanDeveloperCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $developer = new Developer();
-        $output->writeln($developer->can($input->getArgument('can')));
+        $res = $input->getArgument('can');
+        $output->writeln($developer->$res()?'true':'false');
     }
 }

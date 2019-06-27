@@ -20,6 +20,7 @@ class CanTesterCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $tester = new Tester();
-        $output->writeln($tester->can($input->getArgument('can')));
+        $res = $input->getArgument('can');
+        $output->writeln($tester->$res()?'true':'false');
     }
 }

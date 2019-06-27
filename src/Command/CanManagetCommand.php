@@ -20,6 +20,7 @@ class CanManagetCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $manager = new Manager();
-        $output->writeln($manager->can($input->getArgument('can')));
+        $res = $input->getArgument('can');
+        $output->writeln($manager->$res()?'true':'false');
     }
 }

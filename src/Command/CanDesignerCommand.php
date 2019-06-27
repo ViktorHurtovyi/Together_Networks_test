@@ -20,6 +20,7 @@ class CanDesignerCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $designer = new Designer();
-        $output->writeln($designer->can($input->getArgument('can')));
+        $res = $input->getArgument('can');
+        $output->writeln($designer->$res()?'true':'false');
     }
 }

@@ -30,28 +30,8 @@ class Tester implements Worker
     {
         return true;
     }
-
-    function can($do): string
+    public function __call($name, $arguments)
     {
-        switch ($do) {
-            case 'writeCode':
-                return 'false';
-                break;
-            case 'testCode':
-                return 'true';
-                break;
-            case 'communication':
-                return 'true';
-                break;
-            case 'draw':
-                return 'false';
-                break;
-            case 'setTask':
-                return 'true';
-                break;
-            default:
-                return 'неверный формат';
-                break;
-        }
+        return false;
     }
 }
